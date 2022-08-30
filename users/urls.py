@@ -12,8 +12,11 @@ urlpatterns = [
     path('accounts/update/', views.ProfileUpdateView.as_view(), name='profile_update'),
 
     path('password_change/', views.PasswordChangeView.as_view(), name='password_change'),
-
-   
+    path('password_reset/', views.PasswordResetView.as_view(), name='password_reset'),
+    path('password_reset/done/', views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    #path('password_reset_confirm/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('password_reset_confirm/<uidb64>/<token>/', views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('password_reset_complete/', views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 ]
 
 # HERE MAKE APP users USE STATIC FILES
