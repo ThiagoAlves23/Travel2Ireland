@@ -4,6 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import views as auth_views
 from django.contrib import auth
 from django.urls import reverse_lazy
+# Class Based View
 from django.views.generic import TemplateView, CreateView
 
 # message alerts
@@ -93,7 +94,7 @@ def Sign_Up_View(request):
             messages.add_message(request, constants.SUCCESS, 'New user Sucess Register!')
             return redirect(reverse_lazy('login'))
         else:
-            messages.add_message(request, constants.ERROR, 'Erro New user Register!')
+            messages.add_message(request, constants.ERROR, 'Error New user Register!')
             return redirect(reverse_lazy('register'))
     context = {
         'form':form
@@ -105,3 +106,20 @@ class PasswordChangeView(auth_views.PasswordChangeView):
     success_url = reverse_lazy('redirect')
     template_name = 'password/password-change.html'
 
+#RESET PASSWORD
+class PasswordResetView(auth_views.PasswordResetView):
+    template_name = 'password/password-reset-form.html'
+    subject_template_name = 'password/password-reset-subject.txt'
+    email_template_name = 'password/password-reset-email.html'
+
+#COMPLETION PAGE ON CHANGING THE PASSWORD
+class PasswordResetDoneView(auth_views.PasswordResetDoneView):
+    template_name = 'password/password-reset-done.html'
+
+# PASSWORD CHANGE CONFIRMATION
+class PasswordResetConfirmView(auth_views.PasswordResetConfirmView):
+    template_name = 'password/password-reset-confirm.html'
+
+#PASSWORD RESET COMPLETE
+class PasswordResetCompleteView(auth_views.PasswordResetCompleteView):
+    template_name = 'password/password-reset-complete.html'
