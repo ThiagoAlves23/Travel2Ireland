@@ -24,11 +24,11 @@
                             <a href="{% url 'delete_place' p_visit.id %}" style="font-size:18px; width: 40%; margin: 6px; border-radius: 10px;" class="btn btn-danger">Delete</a>
                         {% else %}
                             <a href="{% url 'place_visit' p_visit.id %}" style="padding: 8px; width: 100%; border-radius:10px; font-size: 22px; display: flex; justify-content: center;" 
-                            class="btn btn-primary">See Places to Visit</a>
+                            class="btn btn-primary">Places to Visit</a>
                         {% endif %}
                         {% else %}
                         <a href="{% url 'place_visit' p_visit.id %}" style="padding: 8px; width: 100%; border-radius:10px; font-size: 22px; display: flex; justify-content: center;" 
-                        class="btn btn-primary">See Places to Visit</a>
+                        class="btn btn-primary">Places to Visit</a>
                     {% endif %}
                     </div>
                 </div>

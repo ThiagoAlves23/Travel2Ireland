@@ -22,7 +22,7 @@ class Places_visits(models.Model):
         ('A', 'Adult')
     )
     name = models.CharField(max_length=50, null=True, blank=True)
-    description_place = models.TextField(max_length=5000, null=True, blank=True)
+    description_place = models.TextField(max_length=10000, null=True, blank=True)
     address = models.CharField(max_length=200, null=True, blank=True)
     img = models.ManyToManyField(image_slider_place, null=True, blank=True)
     img_cover = models.ImageField(upload_to='places-visits/cover/', null=True, blank=True)
